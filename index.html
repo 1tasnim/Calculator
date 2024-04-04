@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <div class="calculator">
+                <input type="text" placeholder="0" id="output_screen">
+                
+                <button type="button" onclick="Clear()">C</button>
+                <button type="button" onclick="Clear()"><img src="img\delete.png" alt=""></button>
+                <button type="button" onclick="display('%')">%</button>
+                <button type="button" onclick="display('/')">/</button>
+               
+                <button type="button" class="num" onclick="display('7')">7</button>
+                <button type="button" class="num" onclick="display('8')">8</button>
+                <button type="button" class="num" onclick="display('9')">9</button>
+                <button type="button" onclick="display('*')">*</button>
+                
+                <button type="button" class="num" onclick="display('4')">4</button>
+                <button type="button" class="num" onclick="display('5')">5</button>
+                <button type="button" class="num" onclick="display('6')">6</button>
+                <button type="button" onclick="display('-')">-</button>
+               
+                <button type="button" class="num" onclick="display('1')">1</button>
+                <button type="button" class="num" onclick="display('2')">2</button>
+                <button type="button" class="num" onclick="display('3')">3</button>
+                <button type="button" onclick="display('-')">+</button>
+               
+                <button type="button" onclick="display('+/-')">+/-</button>
+                <button type="button" class="num" onclick="display('0')">0</button>
+                <button type="button" onclick="display('.')">.</button>
+                <button type="button" onclick="calculate()" class="equal">=</button>
+            </div>
+        </section>
+    </main>
+    <footer> <img src="img\msg318209347-7538hh.png" alt="">
+        <h2>ITE.Tasnim</h2></footer>
+    <script>
+        let outputscreen = document.getElementById("output_screen");
+        function display(num){
+            outputscreen.value += num;
+        }
+        function calculate(){
+            try{
+                outputscreen.value = eval(outputscreen.value);
+            }
+            catch(err){
+                alert("Invalid")
+            }
+        }
+        function Clear(){
+            outputscreen.value = "";
+        }
+    </script>
+</body>
+</html>
